@@ -10,7 +10,7 @@ async function hashPassWord(password, salt) {
 }
 
 export async function initDb(db) {
-    await db.execAsync(`
+  await db.execAsync(`
       CREATE TABLE IF NOT EXISTS students (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name            TEXT    NOT NULL,

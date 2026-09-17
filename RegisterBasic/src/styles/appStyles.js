@@ -9,9 +9,11 @@ export const styless = StyleSheet.create({
 
   tabs: {
     flexDirection: 'row',
+    alignSelf: 'stretch',
     gap: 8,
     paddingHorizontal: 20,
     paddingBottom: 12,
+    elevation: 10,
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
   },

@@ -16,7 +16,7 @@ const EMPTY_FORM ={
     confirm:'',
 }
 
-const RegisterScreen = () =>{
+const RegisterScreen = ({onRegisterScreen}) =>{
     const db = useSQLiteContext()
 
     const[form,setform] = useState(EMPTY_FORM)

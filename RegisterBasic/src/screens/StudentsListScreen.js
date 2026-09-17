@@ -40,12 +40,12 @@ export default function StudentListScreen({reloadKey}){
             <Text style={styles.summary}> ลงทะเบียนแล้ว {rows.length} คน </Text>
         }
         renderItem={({item}) => (
-                <View>
-                    <Text style={styles.card}>
+                <View style={styles.card}>
+                    <Text style={styles.cardName}>
                         {item.name} {item.surname}
                     </Text>
-                    <Text style={styles.cardline}>รหัสนิสิต {item.student_id}</Text>
-                    <Text style={styles.cardline}>ชื่อผู้ใช้ {item.username}</Text>
+                    <Text style={styles.cardLine}>รหัสนิสิต {item.student_id}</Text>
+                    <Text style={styles.cardLine}>ชื่อผู้ใช้ {item.username}</Text>
                     <Text style={styles.hashLabel}>
                         ค่าย่อยรหัสผ่าน {''}
                         <Text style={styles.hashValue}>
