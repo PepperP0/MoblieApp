@@ -7,17 +7,24 @@ import { DATABASE_NAME,initDb } from './src/db/database';
 import RegisterScreen from './src/screens/RegisterScreen';
 import StudentListScreen from './src/screens/StudentsListScreen';
 
-export default function App() {
 
+export default function App() {
+  return (
+    <>
+    <StatusBar barStyle='light-content' backgroundColor={colors.bg}/>
+    <SQLiteProvider databaseName={DATABASE_NAME} onInit={initDb}>
+    <Main />
+    </SQLiteProvider>
+    </>
+  );
+}
+
+function Main(){
   const [tab,setTab] = useState('list');
   
   const [reloadKey, setReloadKey] = useState(0);
   
   return (
-    <>
-    <StatusBar barStyle='light-content' backgroundColor={colors.bg}/>
-    <SQLiteProvider databaseName={DATABASE_NAME} onInit={initDb}>
-      
       <View style={styles.container}>
         <View style={styless.header}>
           <Text style={styless.title}>ระบบลงทะเบียนนิสิต</Text>
@@ -43,11 +50,9 @@ export default function App() {
           )}
         </View>
       </View>
-
-    </SQLiteProvider>
-    </>
   );
 }
+
 function TabButton({label, active, onPress}){
   return(
     <Pressable style={[styless.tab, active && styless.tabActive]} onPress={onPress}>
